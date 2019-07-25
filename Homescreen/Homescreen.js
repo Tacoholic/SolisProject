@@ -1,5 +1,12 @@
 import React from "react";
-import { Button, View, Text, StyleSheet } from "react-native";
+import {
+  Button,
+  View,
+  Text,
+  StyleSheet,
+  ImageBackground,
+  Image
+} from "react-native";
 import {
   createStackNavigator,
   createAppContainer,
@@ -8,16 +15,15 @@ import {
 import DetailsScreen from "./DetailsScreen";
 import { Header } from "react-native/Libraries/NewAppScreen";
 
-
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "Blush Directory",
-    headerStyle:{
-      backgroundColor: "#f4511e",
+    title: "The Simpsons",
+    headerStyle: {
+      backgroundColor: "#53b4e6"
     },
-    headerTintColor: "#fff",
+    headerTintColor: "#f6c945",
     headerTitleStyle: {
-      fontWeight: 'bold',
+      fontWeight: "bold"
     },
     headerRight: (
       <Button
@@ -30,32 +36,40 @@ class HomeScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Home Screen</Text>
-        {/* <Header
-          image
-          imageSource={{
+        <ImageBackground
+          source={{
             uri:
-              "https://anotherangle.eu/wp-content/uploads/2014/06/C.H.I.C.A.G.O.-2048.jpg"
+              "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
           }}
-        /> */}
-        <Button
-          title="Go to Details"
-          onPress={() => {
-            /* 1. Navigate to the Details route with params */
-            this.props.navigation.navigate("Details", {
-              itemId: 86,
-              otherParam: "anything you want here"
-            });
-          }}
-        />
-        <Button
-          title="Your Bio"
-          onPress={() => this.props.navigation.navigate("Bio")}
-        />
-        <Button
-          title="Employees list"
-          onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
-        />
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Text style={styles.home_text}>Welcome</Text>
+          <Button
+            title="Go to Details"
+            onPress={() => {
+              /* 1. Navigate to the Details route with params */
+              this.props.navigation.navigate("Details", {
+                itemId: 86,
+                otherParam: "anything you want here"
+              });
+            }}
+          />
+          <Button
+            title="Your Bio"
+            onPress={() => this.props.navigation.navigate("Bio")}
+          />
+          <Button
+            title="Employees list"
+            onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
+          />
+          <Image
+            source={{
+              uri:
+                "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
+            }}
+            style={{ width: 100 , height: 120, justifyContent: "center", alignContent: "center" }}
+          />
+        </ImageBackground>
       </View>
     );
   }
@@ -64,7 +78,7 @@ class HomeScreen extends React.Component {
 const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
+    Details: DetailsScreen
   },
   {
     initialRouteName: "Home",
@@ -76,8 +90,8 @@ const RootStack = createStackNavigator(
       headerTintColor: "#fff",
       headerTitleStyle: {
         fontWeight: "bold"
-      },
-    },
+      }
+    }
   }
 );
 const ExampleScreen = View;
@@ -98,6 +112,14 @@ const Home = createStackNavigator(
     }
   }
 );
+
+const styles = StyleSheet.create({
+  home_text: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "center"
+  }
+});
 
 const Tabs = createBottomTabNavigator({ Home });
 
