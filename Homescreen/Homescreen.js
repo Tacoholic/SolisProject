@@ -61,7 +61,7 @@ class HomeScreen extends React.Component {
               height: 434,
               justifyContent: "center",
               alignContent: "center",
-              marginTop: 95
+              marginTop: 20
             }}
             resizeMode="cover"
           />
