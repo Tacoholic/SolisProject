@@ -35,7 +35,15 @@ class HomeScreen extends React.Component {
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignContent: "center"
+        }}
+      >
         <ImageBackground
           source={{
             uri:
@@ -43,6 +51,20 @@ class HomeScreen extends React.Component {
           }}
           style={{ width: "100%", height: "100%" }}
         >
+          <Image
+            source={{
+              uri:
+                "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
+            }}
+            style={{
+              width: 380,
+              height: 434,
+              justifyContent: "center",
+              alignContent: "center",
+              marginTop: 95
+            }}
+            resizeMode="cover"
+          />
           <Text style={styles.home_text}>Welcome</Text>
           <Button
             title="Go to Details"
@@ -59,15 +81,8 @@ class HomeScreen extends React.Component {
             onPress={() => this.props.navigation.navigate("Bio")}
           />
           <Button
-            title="Employees list"
+            title="Character Directory"
             onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
-          />
-          <Image
-            source={{
-              uri:
-                "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
-            }}
-            style={{ width: 100 , height: 120, justifyContent: "center", alignContent: "center" }}
           />
         </ImageBackground>
       </View>
