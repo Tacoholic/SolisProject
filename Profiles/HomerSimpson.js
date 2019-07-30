@@ -6,15 +6,16 @@ import {
   StyleSheet,
   Image,
   List,
-  ListItem
+  ListItem,
+  ImageBackground
 } from "react-native";
 class HomerSimpson extends React.Component {
   static navigationOptions = {
     title: "Homer Simpson Profile",
     headerStyle: {
-      backgroundColor: "#f4511e"
+      backgroundColor: "#53b4e6"
     },
-    headerTintColor: "#fff",
+    headerTintColor: "#f6c945",
     headerTitleStyle: {
       fontWeight: "bold"
     },
@@ -22,51 +23,81 @@ class HomerSimpson extends React.Component {
       <Button
         onPress={() => alert("Homer loves to swim in rivers")}
         title="Facts"
-        color="fff"
+        color="#f6c945"
       />
     )
   };
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Image
-          style={{ width: 200, height: 200 }}
+      <View style={styles.container}>
+        <ImageBackground
           source={{
             uri:
-              "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2011/08/23/23827615-simpson_homer_headshot.jpg?v=1314140241"
+              "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
           }}
-        />
-        <Text style={[styles.homer_text]}>Homer Simpson</Text>
-        <Text>Hometown: Springfield</Text>
-        <Text>Occupation: Nuclear Safety Inspector</Text>
-        <Text>Social Media Handles</Text>
-        <Button
-          title="Go To Next Profile"
-          onPress={() => this.props.navigation.navigate("BartSimpson")}
-        />
-        <Button
-          title="Go to Character Directory"
-          onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
-        />
-        <Button
-          title="Go back to the home page"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
+          style={{ width: "100%", height: "100%" }}
+        >
+          <Image
+            style={{
+              width: "100%",
+              height: "100%",
+              marginTop: -250,
+              alignItems: "center"
+            }}
+            resizeMode="cover"
+            source={{
+              uri:
+                "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-sidebar/character-facts/Homer/swsb_character_fact_homer_288x763.png"
+            }}
+          />
+          <Text style={[styles.homer_text]}>Homer Simpson</Text>
+          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: Nuclear Safety Inspector
+          </Text>
+          <Button
+            style={[styles.button]}
+            title="Go To Next Profile"
+            onPress={() => this.props.navigation.navigate("BartSimpson")}
+          />
+          <Button
+            title="Go to Character Directory"
+            onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
+          />
+          <Button
+            title="Go back to the home page"
+            onPress={() => this.props.navigation.navigate("Home")}
+          />
+        </ImageBackground>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
+  container: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
   homer_text: {
-    fontSize: 30
+    fontSize: 35,
+    color: "black",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center"
+  },
+  homer_text2: {
+    color: "black",
+    fontSize: 20,
+    textAlign: "center"
   },
   item: {
     fontSize: 30,
     padding: 10,
     height: 20,
     color: "green"
+  },
+  button: {
+    color: "red"
   }
 });
 export default HomerSimpson;
-
-

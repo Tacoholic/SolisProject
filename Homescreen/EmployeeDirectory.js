@@ -56,42 +56,52 @@ class EmployeeDirectory extends React.Component {
           <Button
             title="Homer Simpson"
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            color="#f6c945"
           />
           <Button
             title="Bart Simpson"
             onPress={() => this.props.navigation.navigate("BartSimpson")}
+            color="#f6c945"
           />
           <Button
             title="Lisa Simpson"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Maggie Simpson"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Marge Simpson"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Moe"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Chief Wiggum"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Apu"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Mr. Burns"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Ned Flanders"
             onPress={() => this.props.navigation.navigate("")}
+            color="#f6c945"
           />
           <Button
             title="Go to Home"

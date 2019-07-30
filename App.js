@@ -5,6 +5,9 @@ import {
   ScrollView,
   View,
   Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
   StatusBar
 } from "react-native";
 
@@ -30,9 +33,11 @@ import BioScreen from "./Homescreen/BioScreen";
 import EmployeeDirectory from "./Homescreen/EmployeeDirectory";
 import HomerSimpson from "./Profiles/HomerSimpson";
 import BartSimpson from "./Profiles/BartSimpson";
+import Login from "./Homescreen/Login";
 
 const AppNavigator = createStackNavigator(
   {
+    Login: Login,
     Home: HomeScreen,
     Details: DetailsScreen,
     Bio: BioScreen,
@@ -41,23 +46,8 @@ const AppNavigator = createStackNavigator(
     BartSimpson: BartSimpson
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Login"
   }
 );
-
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
-  Details: DetailsScreen
-});
-
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
-  Profile: ProfileScreen
-});
-
-const TabNavigator = createBottomTabNavigator({
-  Home: HomeStack,
-  Settings: SettingsStack
-});
 
 export default createAppContainer(AppNavigator);
