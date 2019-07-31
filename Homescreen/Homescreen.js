@@ -77,7 +77,7 @@ class HomeScreen extends React.Component {
             }}
           />
           <Button
-            title="Your Bio"
+            title="WHITE SOX"
             onPress={() => this.props.navigation.navigate("Bio")}
           />
           <Button

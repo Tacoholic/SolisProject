@@ -6,11 +6,20 @@ import {
   TouchableOpacity,
   Text
 } from "react-native";
+import {
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator,
+  createSwitchNavigator
+} from "react-navigation";
+
+import AsyncStorage from "@react-native-community/async-storage";
 
 export default class LoginForm extends Component {
-  static navigationOptions = {
-    title: "please sign in"
-  };
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -32,11 +41,19 @@ export default class LoginForm extends Component {
           returnKeyType="go"
           ref={input => (this.passwordInput = input)}
         />
-        <TouchableOpacity style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => this._signInAsync()}
+        >
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
       </View>
     );
+  }
+  _signInAsync() {
+    // await AsyncStorage.setItem("userToken", "abc");
+
+    this.props.navigation.navigate("Home");
   }
 }
 
@@ -55,7 +72,8 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: "#ffaf40",
     paddingVertical: 15,
-    borderRadius: 25
+    borderRadius: 25,
+    marginBottom: 100
   },
   buttonText: {
     textAlign: "center",
