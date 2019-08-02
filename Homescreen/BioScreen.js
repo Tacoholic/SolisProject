@@ -1,47 +1,184 @@
-import React from "react";
-import { Button, View, Text, StyleSheet, Image, Animated } from "react-native";
+import React, { Component } from "react";
+import FlipComponent from "react-native-flip-component";
+import {
+  View,
+  Button,
+  Text,
+  Image,
+  Dimensions,
+  StyleSheet
+} from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-class BioScreen extends React.Component {
-  static navigationOptions = {
-    title: "Home",
-    headerStyle: {
-      backgroundColor: "#f4511e"
-    },
-    headerTintColor: "#fff",
-    headerTitleStyle: {
-      fontWeight: "bold"
-    },
-    headerRight: (
-      <Button
-        onPress={() => alert("You have 9 matches today!")}
-        title="INFO"
-        color="fff"
+const { height, width } = Dimensions.get("window");
+
+function FrontView(props) {
+  return (
+    <View>
+      <Text
+        style={{
+          textAlign: "center",
+          color: "#fcfaf9",
+          fontSize: 20
+        }}
+      >
+        There is another image on the other side
+      </Text>
+      <TouchableOpacity onPress={props.flip} style={styles.button}>
+        <Text style={styles.text}>Flip it back</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+
+function BackView(props) {
+  return (
+    <View>
+      <Image
+        source={{
+          uri:
+            "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
+        }}
+        style={{
+          width: 380,
+          height: 434,
+          justifyContent: "center",
+          alignContent: "center",
+          marginTop: 20
+        }}
+        resizeMode="cover"
       />
-    )
+      <TouchableOpacity onPress={props.flip} style={styles.button}>
+        <Text style={styles.text}>Flip it back</Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
+export default class BioScreen extends React.Component {
+  static navigationOptions = {
+    title: "React Native App",
+    headerStyle: {
+      backgroundColor: "#ff793f"
+    }
   };
+  constructor(props) {
+    super(props);
+    this.state = { isFlipped: false };
+    this.flip = this.flip.bind(this);
+  }
 
+  flip() {
+    this.setState({
+      isFlipped: !this.state.isFlipped
+    });
+  }
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Image
-          style={{ width: 200, height: 200 }}
-          source={{
-            uri:
-              "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2011/08/23/23827615-simpson_homer_headshot.jpg?v=1314140241"
-          }}
-        />
-        <Text>Name: Christian Solis</Text>
-        <Text>Hometown: Chicago, IL</Text>
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate("Home")}
-        />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
+      <View style={styles.container}>
+        <FlipComponent
+          isFlipped={this.state.isFlipped}
+          frontView={<FrontView flip={this.flip} />}
+          backView={<BackView flip={this.flip} />}
+          frontStyles={styles.frontStyles}
+          backStyles={styles.backStyles}
+          rotateDuration={1000}
         />
       </View>
     );
   }
 }
-export default BioScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#ff793f",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  frontStyles: {
+    backgroundColor: "#ff793f",
+    justifyContent: "center",
+    height,
+    width
+  },
+  backStyles: {
+    backgroundColor: "#ff793f",
+    justifyContent: "center",
+    height,
+    width
+  },
+  button: {
+    backgroundColor: "#152c43",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 150,
+    height: 75,
+    alignSelf: "center",
+    borderRadius: 25
+  },
+  text: {
+    color: "#bddac8"
+  }
+});
+
+// class BioScreen extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       isFlipped: false
+//     };
+//   }
+
+//   render() {
+//     return (
+//       <View>
+//         <FlipComponent
+//           isFlipped={this.state.isFlipped}
+//           frontView={
+//             <View>
+// <Image
+//   source={{
+//     uri:
+//       "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
+//   }}
+//   style={{
+//     width: 380,
+//     height: 434,
+//     justifyContent: "center",
+//     alignContent: "center",
+//     marginTop: 20
+//   }}
+//   resizeMode="cover"
+// />
+//             </View>
+//           }
+//           backView={
+//             <View>
+//               <Image
+//                 source={{
+//                   uri:
+//                   "http://clipart-library.com/images/8cAEnpM6i.png"
+//                 }}
+//                 style={{
+//                   width: 380,
+//                   height: 434,
+//                   justifyContent: "center",
+//                   alignContent: "center",
+//                   marginTop: 20
+//                 }}
+//                 resizeMode="cover"
+//               />
+//             </View>
+//           }
+//         />
+//         <Button
+//           onPress={() => {
+//             this.setState({ isFlipped: !this.state.isFlipped });
+//           }}
+//           title="Flip the image"
+//         />
+//       </View>
+//     );
+//   }
+// }
+
+// export default BioScreen;
