@@ -77,12 +77,16 @@ class HomeScreen extends React.Component {
             }}
           />
           <Button
-            title="WHITE SOX"
+            title="Family Guy or Simpsons"
             onPress={() => this.props.navigation.navigate("Bio")}
           />
           <Button
             title="Character Directory"
             onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
+          />
+           <Button
+            title="Lets have some fun"
+            onPress={() => this.props.navigation.navigate("BallBounce")}
           />
         </ImageBackground>
       </View>

@@ -15,6 +15,20 @@ const { height, width } = Dimensions.get("window");
 function FrontView(props) {
   return (
     <View>
+      <Image
+        source={{
+          uri:
+            "https://comicvine1.cbsistatic.com/uploads/screen_kubrick/0/40/906652-familyguy.png"
+        }}
+        style={{
+          width: 380,
+          height: 200,
+          justifyContent: "center",
+          alignContent: "center",
+          marginTop: 20
+        }}
+        resizeMode="cover"
+      />
       <Text
         style={{
           textAlign: "center",
@@ -22,10 +36,10 @@ function FrontView(props) {
           fontSize: 20
         }}
       >
-        There is another image on the other side
+        Are you a Family Guy type of person?
       </Text>
       <TouchableOpacity onPress={props.flip} style={styles.button}>
-        <Text style={styles.text}>Flip it back</Text>
+        <Text style={styles.text}>If not, press here.</Text>
       </TouchableOpacity>
     </View>
   );
@@ -40,16 +54,25 @@ function BackView(props) {
             "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
         }}
         style={{
-          width: 380,
-          height: 434,
+          width: 38,
+          height: 50,
           justifyContent: "center",
           alignContent: "center",
           marginTop: 20
         }}
         resizeMode="cover"
       />
+      <Text
+        style={{
+          textAlign: "center",
+          color: "#fcfaf9",
+          fontSize: 20
+        }}
+      >
+        Or are you a Simpsons type of person?
+      </Text>
       <TouchableOpacity onPress={props.flip} style={styles.button}>
-        <Text style={styles.text}>Flip it back</Text>
+        <Text style={styles.text}>Naw, take me back to Family Guy.</Text>
       </TouchableOpacity>
     </View>
   );
@@ -81,7 +104,7 @@ export default class BioScreen extends React.Component {
           backView={<BackView flip={this.flip} />}
           frontStyles={styles.frontStyles}
           backStyles={styles.backStyles}
-          rotateDuration={1000}
+          rotateDuration={100}
         />
       </View>
     );
@@ -110,13 +133,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#152c43",
     alignItems: "center",
     justifyContent: "center",
-    width: 150,
-    height: 75,
+    width: 100,
+    height: 50,
     alignSelf: "center",
-    borderRadius: 25
+    borderRadius: 25,
+    marginTop: 10
   },
   text: {
-    color: "#bddac8"
+    color: "#bddac8",
+    fontSize: 10,
+    textAlign: "center"
   }
 });
 
