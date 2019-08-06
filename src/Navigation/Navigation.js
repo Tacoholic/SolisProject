@@ -25,8 +25,9 @@ const AppNavigator = createStackNavigator(
     Rankings: Rankings
   },
   {
-    initialRouteName: "Login"
+    initialRouteName: "Rankings"
   }
 );
 
 export default createAppContainer(AppNavigator);
+

@@ -67,7 +67,7 @@ class HomeScreen extends React.Component {
           />
           <Text style={styles.home_text}>Welcome</Text>
           <Button
-            title="Family Guy or Simpsons"
+            title="Vote!"
             onPress={() => this.props.navigation.navigate("Bio")}
           />
           <Button

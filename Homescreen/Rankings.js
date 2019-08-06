@@ -5,15 +5,15 @@ import SortableGrid from "react-native-sortable-grid";
 
 export default class Rankings extends Component {
   static navigationOptions = {
-      title: "Lets play a game...",
-      headerStyle: {
-        backgroundColor: "#ffcccc"
-      },
-      headerTintColor: "#4b4b4b",
-      headerTitleStyle: {
-        fontWeight: "bold"
-      },
-  }
+    title: "Lets play a game...",
+    headerStyle: {
+      backgroundColor: "#ffcccc"
+    },
+    headerTintColor: "#4b4b4b",
+    headerTitleStyle: {
+      fontWeight: "bold"
+    }
+  };
   constructor() {
     super();
     this.numbers = [
@@ -83,7 +83,7 @@ export default class Rankings extends Component {
     return (
       <View style={styles.container}>
         <Text
-          style={{ alignSelf: "center", fontWeight: "bold", marginBottom: 10 }}
+          style={{ alignSelf: "center", fontWeight: "bold", marginBottom: 10, fontSize: 25, justifyContent: "center", textAlign: "center" }}
         >
           Rank your favorite Simpsons characters
         </Text>
@@ -103,7 +103,17 @@ export default class Rankings extends Component {
               key={index}
               style={[styles.block, { backgroundColor: this.getColor() }]}
             >
-              <Text style={{ color: "white", fontSize: 25 }}>{letter}</Text>
+              <Text
+                style={{
+                  color: "white",
+                  fontSize: 25,
+                  textShadowColor: "red",
+                  textShadowOffset: { width: -1, height: 1 },
+                  textShadowRadius: 7
+                }}
+              >
+                {letter}
+              </Text>
             </View>
           ))}
         </SortableGrid>
@@ -116,13 +126,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 35,
-    backgroundColor: "#ffcccc"  
+    backgroundColor: "#ffcccc"
   },
   block: {
     flex: 1,
     margin: 8,
     borderRadius: 15,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    textAlign: "center"
   }
 });
