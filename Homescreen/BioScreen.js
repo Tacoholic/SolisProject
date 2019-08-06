@@ -54,8 +54,8 @@ function BackView(props) {
             "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
         }}
         style={{
-          width: 38,
-          height: 50,
+          width: 380,
+          height: 434,
           justifyContent: "center",
           alignContent: "center",
           marginTop: 20

@@ -37,7 +37,7 @@ export default class BallBounce extends Component {
     return (
       <View style={[styles.container, { justifyContent: this.state.position }]}>
         <Image
-          source={{ uri: "https://i.imgur.com/a2GDkoW.png" }}
+          source={{ uri: "https://img.pngio.com/football-png-images-images-of-soccer-balls-png-2400_2359.png" }}
           style={{ width: 75, height: 75 }}
         />
         <View style={styles.buttonsContainer}>
@@ -75,8 +75,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     position: "absolute",
-    bottom: 16,
-    width: "50%",
+    bottom: 14,
+    width: "100%",
     backgroundColor: "#e55039"
   },
   button: {

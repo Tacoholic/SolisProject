@@ -6,6 +6,8 @@ import HomerSimpson from "../../Profiles/HomerSimpson";
 import BartSimpson from "../../Profiles/BartSimpson";
 import Login from "../../Homescreen/Login";
 import BallBounce from "../../Homescreen/BallBounce";
+import OverlayPage from "../../Homescreen/OverlayPage";
+import Rankings from "../../Homescreen/Rankings";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -18,10 +20,12 @@ const AppNavigator = createStackNavigator(
     EmployeeDirectory: EmployeeDirectory,
     HomerSimpson: HomerSimpson,
     BartSimpson: BartSimpson,
-    BallBounce: BallBounce
+    BallBounce: BallBounce,
+    OverlayPage: OverlayPage, 
+    Rankings: Rankings
   },
   {
-    initialRouteName: "Login"
+    initialRouteName: "Rankings"
   }
 );
 

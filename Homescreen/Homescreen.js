@@ -67,16 +67,6 @@ class HomeScreen extends React.Component {
           />
           <Text style={styles.home_text}>Welcome</Text>
           <Button
-            title="Go to Details"
-            onPress={() => {
-              /* 1. Navigate to the Details route with params */
-              this.props.navigation.navigate("Details", {
-                itemId: 86,
-                otherParam: "anything you want here"
-              });
-            }}
-          />
-          <Button
             title="Family Guy or Simpsons"
             onPress={() => this.props.navigation.navigate("Bio")}
           />

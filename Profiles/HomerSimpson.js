@@ -65,7 +65,7 @@ class HomerSimpson extends React.Component {
             onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
           />
           <Button
-            title="Go back to the home page"
+            title="Homepage"
             onPress={() => this.props.navigation.navigate("Home")}
           />
         </ImageBackground>
@@ -101,3 +101,5 @@ const styles = StyleSheet.create({
   }
 });
 export default HomerSimpson;
+
+
