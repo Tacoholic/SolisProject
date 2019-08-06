@@ -78,6 +78,10 @@ class HomeScreen extends React.Component {
             title="Lets have some fun"
             onPress={() => this.props.navigation.navigate("BallBounce")}
           />
+           <Button
+            title="Lets have some more fun"
+            onPress={() => this.props.navigation.navigate("Rankings")}
+          />
         </ImageBackground>
       </View>
     );
