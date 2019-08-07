@@ -15,7 +15,7 @@ export default class Login extends Component {
   static navigationOptions = {
     title: "React Native App",
     headerStyle: {
-      backgroundColor: "#ff793f"
+      backgroundColor: "#53b4e6"
     }
   };
   render() {
@@ -51,7 +51,7 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ff793f"
+    backgroundColor: "#53b4e6"
   },
   logoContainer: {
     alignItems: "center",

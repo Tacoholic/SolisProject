@@ -6,7 +6,8 @@ import {
   Text,
   Image,
   Dimensions,
-  StyleSheet
+  StyleSheet,
+  ImageBackground
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -18,25 +19,26 @@ function FrontView(props) {
       <Image
         source={{
           uri:
-            "https://comicvine1.cbsistatic.com/uploads/screen_kubrick/0/40/906652-familyguy.png"
+            "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_disco_550x960.png"
         }}
         style={{
           width: 380,
-          height: 200,
+          height: 600,
           justifyContent: "center",
           alignContent: "center",
-          marginTop: 20
+          marginTop: -175
         }}
         resizeMode="cover"
       />
       <Text
         style={{
           textAlign: "center",
-          color: "#fcfaf9",
+          color: "#2c3e50",
+          fontWeight: "bold",
           fontSize: 20
         }}
       >
-        Are you a Family Guy type of person?
+        Are you a Disco Stu fan?
       </Text>
       <TouchableOpacity onPress={props.flip} style={styles.button}>
         <Text style={styles.text}>If not, press here.</Text>
@@ -51,28 +53,29 @@ function BackView(props) {
       <Image
         source={{
           uri:
-            "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
+            "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Krusty/swsb_character_fact_krusty_550x960.png"
         }}
         style={{
           width: 380,
-          height: 434,
+          height: 610,
           justifyContent: "center",
           alignContent: "center",
-          marginTop: 20
+          marginTop: -175
         }}
-        resizeMode="cover"
+   
       />
       <Text
         style={{
           textAlign: "center",
-          color: "#fcfaf9",
+          color: "#2c3e50",
+          fontWeight: "bold",
           fontSize: 20
         }}
       >
-        Or are you a Simpsons type of person?
+        Or are you a Krusty fan?
       </Text>
       <TouchableOpacity onPress={props.flip} style={styles.button}>
-        <Text style={styles.text}>Naw, take me back to Family Guy.</Text>
+        <Text style={styles.text}> Go back to Disco Stu.</Text>
       </TouchableOpacity>
     </View>
   );
@@ -81,8 +84,12 @@ export default class BioScreen extends React.Component {
   static navigationOptions = {
     title: "React Native App",
     headerStyle: {
-      backgroundColor: "#ff793f"
-    }
+      backgroundColor: "#53b4e6"
+    },
+    headerTintColor: "#f6c945",
+    headerTitleStyle: {
+      fontWeight: "bold"
+    },
   };
   constructor(props) {
     super(props);
@@ -98,14 +105,22 @@ export default class BioScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlipComponent
-          isFlipped={this.state.isFlipped}
-          frontView={<FrontView flip={this.flip} />}
-          backView={<BackView flip={this.flip} />}
-          frontStyles={styles.frontStyles}
-          backStyles={styles.backStyles}
-          rotateDuration={100}
-        />
+        <ImageBackground
+          source={{
+            uri:
+              "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
+          }}
+          style={{ width: "100%", height: "100%" }}
+        >
+          <FlipComponent
+            isFlipped={this.state.isFlipped}
+            frontView={<FrontView flip={this.flip} />}
+            backView={<BackView flip={this.flip} />}
+            frontStyles={styles.frontStyles}
+            backStyles={styles.backStyles}
+            rotateDuration={100}
+          />
+        </ImageBackground>
       </View>
     );
   }
@@ -113,18 +128,15 @@ export default class BioScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ff793f",
     alignItems: "center",
     justifyContent: "center"
   },
   frontStyles: {
-    backgroundColor: "#ff793f",
     justifyContent: "center",
     height,
     width
   },
   backStyles: {
-    backgroundColor: "#ff793f",
     justifyContent: "center",
     height,
     width
@@ -136,75 +148,15 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
     alignSelf: "center",
-    borderRadius: 25,
+    borderRadius: 100,
     marginTop: 10
   },
   text: {
     color: "#bddac8",
     fontSize: 10,
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: "bold",
+    alignItems: "center"
   }
 });
 
-// class BioScreen extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       isFlipped: false
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <View>
-//         <FlipComponent
-//           isFlipped={this.state.isFlipped}
-//           frontView={
-//             <View>
-// <Image
-//   source={{
-//     uri:
-//       "https://upload.wikimedia.org/wikipedia/en/0/0d/Simpsons_FamilyPicture.png"
-//   }}
-//   style={{
-//     width: 380,
-//     height: 434,
-//     justifyContent: "center",
-//     alignContent: "center",
-//     marginTop: 20
-//   }}
-//   resizeMode="cover"
-// />
-//             </View>
-//           }
-//           backView={
-//             <View>
-//               <Image
-//                 source={{
-//                   uri:
-//                   "http://clipart-library.com/images/8cAEnpM6i.png"
-//                 }}
-//                 style={{
-//                   width: 380,
-//                   height: 434,
-//                   justifyContent: "center",
-//                   alignContent: "center",
-//                   marginTop: 20
-//                 }}
-//                 resizeMode="cover"
-//               />
-//             </View>
-//           }
-//         />
-//         <Button
-//           onPress={() => {
-//             this.setState({ isFlipped: !this.state.isFlipped });
-//           }}
-//           title="Flip the image"
-//         />
-//       </View>
-//     );
-//   }
-// }
-
-// export default BioScreen;

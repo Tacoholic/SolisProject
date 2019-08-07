@@ -7,8 +7,10 @@ import {
   Platform,
   Animated,
   ScrollView,
-  ImageBackground
+  ImageBackground,
+  TouchableOpacity
 } from "react-native";
+
 import {
   createStackNavigator,
   createAppContainer,
@@ -36,85 +38,108 @@ class EmployeeDirectory extends React.Component {
     )
   };
   render() {
+
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignContent: "center"
-        }}
-      >
+      <View style={styles.container}>
         <ImageBackground
           source={{
             uri:
               "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
           }}
-          style={{ width: "100%", height: "100%" }}
+          style={{
+            width: "100%",
+            height: "100%",
+            alignContent: "center",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
         >
-          <Button
-            title="Homer Simpson"
+          <TouchableOpacity
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
-            color="#f6c945"
-          />
-          <Button
-            title="Bart Simpson"
+            style={styles.button}
+          >
+            <Text style={styles.text}>Homer Simpson</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
             onPress={() => this.props.navigation.navigate("BartSimpson")}
-            color="#f6c945"
-          />
-          <Button
-            title="Lisa Simpson"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Maggie Simpson"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Marge Simpson"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Moe"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Chief Wiggum"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Apu"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Mr. Burns"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Ned Flanders"
-            onPress={() => this.props.navigation.navigate("")}
-            color="#f6c945"
-          />
-          <Button
-            title="Go to Home"
+            style={styles.button}
+          >
+            <Text style={styles.text}>Bart Simpson</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Marge Simpson</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Lisa Simpson</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Maggie Simpson</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Santa's Little Helper</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Barney Gumble</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Mr. Burns</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Ralph Wiggum</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Kent Brockman</Text>
+          </TouchableOpacity>
+          {/* <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Otto Mann</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Scratchy</Text>
+          </TouchableOpacity> */}
+
+          <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Home")}
-            color="red"
-          />
-          <View style={styles.go_back}>
-            <Button
-              title="Go back"
-              onPress={() => this.props.navigation.goBack()}
-              color="red"
-            />
-          </View>
+            style={styles.button}
+          >
+            <Text style={styles.text}>Home Screen</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => this.props.navigation.goBack("")}
+            style={styles.button}
+          >
+            <Text style={styles.text}>Go to previous screen</Text>
+          </TouchableOpacity>
         </ImageBackground>
       </View>
     );
@@ -122,14 +147,33 @@ class EmployeeDirectory extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  employee_list: {
-    color: "red",
-    fontSize: 55,
-    fontWeight: "bold",
-    marginTop: -150
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center"
   },
-  go_back: {
-    color: "red"
+  text: {
+    fontSize: 25,
+    fontWeight: "bold",
+    color: "#f6c945",
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center"
+  },
+  button: {
+    flexDirection: "row",
+    backgroundColor: "#2d98da",
+    alignItems: "center",
+    justifyContent: "center",
+    alignContent: "center",
+    marginTop: 10,
+    marginBottom: 10,
+    borderRadius: 10,
+    borderWidth: 1.0,
+    borderColor: "black",
+    height: 30,
+    width: 260
   }
 });
 

@@ -25,9 +25,17 @@ const AppNavigator = createStackNavigator(
     Rankings: Rankings
   },
   {
-    initialRouteName: "Rankings"
-  }
+    initialRouteName: "Login",
+    defaultNavigationOptions: {
+        headerStyle: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  },
 );
 
 export default createAppContainer(AppNavigator);
+
 

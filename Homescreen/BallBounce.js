@@ -16,7 +16,7 @@ export default class BallBounce extends Component {
   static navigationOptions = {
     title: "Ball Bounce",
     headerStyle: {
-      backgroundColor: "#82ccdd"
+      backgroundColor: "#53b4e6"
     },
     headerTintColor: "#f6c945",
     headerTitleStyle: "bold"    
@@ -37,8 +37,8 @@ export default class BallBounce extends Component {
     return (
       <View style={[styles.container, { justifyContent: this.state.position }]}>
         <Image
-          source={{ uri: "https://img.pngio.com/football-png-images-images-of-soccer-balls-png-2400_2359.png" }}
-          style={{ width: 75, height: 75 }}
+          source={{ uri: "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_mrteeny_550x960.png" }}
+          style={{ width: 100, height: 150 }}
         />
         <View style={styles.buttonsContainer}>
           <Button
@@ -66,10 +66,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF",
+    backgroundColor: "#53b4e6",
     paddingTop: 64,
     paddingBottom: 32,
-    backgroundColor: "#82ccdd"
+    backgroundColor: "#53b4e6"
   },
   buttonsContainer: {
     flexDirection: "row",

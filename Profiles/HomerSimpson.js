@@ -57,11 +57,11 @@ class HomerSimpson extends React.Component {
           </Text>
           <Button
             style={[styles.button]}
-            title="Go To Next Profile"
+            title="Next Profile"
             onPress={() => this.props.navigation.navigate("BartSimpson")}
           />
           <Button
-            title="Go to Character Directory"
+            title="Character Directory"
             onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
           />
           <Button

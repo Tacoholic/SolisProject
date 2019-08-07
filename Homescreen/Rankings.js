@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, Animated, View } from "react-native";
+import { StyleSheet, Text, Animated, View, ImageBackground } from "react-native";
 
 import SortableGrid from "react-native-sortable-grid";
 
 export default class Rankings extends Component {
   static navigationOptions = {
-    title: "Lets play a game...",
+    title: "Lets play a game.",
     headerStyle: {
-      backgroundColor: "#ffcccc"
+      backgroundColor: "#53b4e6"
     },
-    headerTintColor: "#4b4b4b",
+    headerTintColor: "#f6c945",
     headerTitleStyle: {
       fontWeight: "bold"
     }
@@ -82,6 +82,10 @@ export default class Rankings extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <ImageBackground
+          source={{ uri: "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"}}
+          style={{ width: "100%", height: "100%"}}
+        >
         <Text
           style={{ alignSelf: "center", fontWeight: "bold", marginBottom: 10, fontSize: 25, justifyContent: "center", textAlign: "center" }}
         >
@@ -117,6 +121,7 @@ export default class Rankings extends Component {
             </View>
           ))}
         </SortableGrid>
+        </ImageBackground>
       </View>
     );
   }
@@ -125,7 +130,6 @@ export default class Rankings extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 35,
     backgroundColor: "#ffcccc"
   },
   block: {
