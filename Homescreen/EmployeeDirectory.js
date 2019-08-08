@@ -11,11 +11,17 @@ import {
   TouchableOpacity
 } from "react-native";
 
+import { Avatar } from 'react-native-elements';
+
+import SearchHeader from './SearchHeader'
+
 import {
   createStackNavigator,
   createAppContainer,
   createBottomTabNavigator
 } from "react-navigation";
+
+import { SearchBar } from "react-native-elements";
 
 class EmployeeDirectory extends React.Component {
   static navigationOptions = {
@@ -37,8 +43,16 @@ class EmployeeDirectory extends React.Component {
       />
     )
   };
-  render() {
+  
+  state = {
+    search: ""
+  };
+  updateSearch = search => {
+    this.setState({ search });
+  };
 
+  render() {
+    const { search } = this.state;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -54,6 +68,8 @@ class EmployeeDirectory extends React.Component {
             alignItems: "center"
           }}
         >
+        
+          <SearchHeader />
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
             style={styles.button}
@@ -114,7 +130,7 @@ class EmployeeDirectory extends React.Component {
           >
             <Text style={styles.text}>Kent Brockman</Text>
           </TouchableOpacity>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
             style={styles.button}
           >
@@ -125,7 +141,7 @@ class EmployeeDirectory extends React.Component {
             style={styles.button}
           >
             <Text style={styles.text}>Scratchy</Text>
-          </TouchableOpacity> */}
+          </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Home")}

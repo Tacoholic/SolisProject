@@ -9,6 +9,8 @@ import BallBounce from "../../Homescreen/BallBounce";
 import OverlayPage from "../../Homescreen/OverlayPage";
 import Rankings from "../../Homescreen/Rankings";
 
+
+
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const AppNavigator = createStackNavigator(
@@ -22,10 +24,12 @@ const AppNavigator = createStackNavigator(
     BartSimpson: BartSimpson,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
-    Rankings: Rankings
+    Rankings: Rankings,
+
+
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "EmployeeDirectory",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
