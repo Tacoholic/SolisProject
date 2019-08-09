@@ -83,61 +83,61 @@ class EmployeeDirectory extends React.Component {
             <Text style={styles.text}>Bart Simpson</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("MargeSimpson")}
             style={styles.button}
           >
             <Text style={styles.text}>Marge Simpson</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("LisaSimpson")}
             style={styles.button}
           >
             <Text style={styles.text}>Lisa Simpson</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("MaggieSimpson")}
             style={styles.button}
           >
             <Text style={styles.text}>Maggie Simpson</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("SantasHelper")}
             style={styles.button}
           >
             <Text style={styles.text}>Santa's Little Helper</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("BarneyGumble")}
             style={styles.button}
           >
             <Text style={styles.text}>Barney Gumble</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("MrBurns")}
             style={styles.button}
           >
             <Text style={styles.text}>Mr. Burns</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("RalphWiggum")}
             style={styles.button}
           >
             <Text style={styles.text}>Ralph Wiggum</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("KentBrockman")}
             style={styles.button}
           >
             <Text style={styles.text}>Kent Brockman</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("OttoMan")}
             style={styles.button}
           >
             <Text style={styles.text}>Otto Mann</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
+            onPress={() => this.props.navigation.navigate("Scratchy")}
             style={styles.button}
           >
             <Text style={styles.text}>Scratchy</Text>

@@ -9,9 +9,9 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
-class BartSimpson extends React.Component {
+class MaggieSimpson extends React.Component {
   static navigationOptions = {
-    title: "Bart Simpson's Profile",
+    title: "Maggie Simpson's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -19,7 +19,7 @@ class BartSimpson extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("Bart loves to skateboard")} title="Facts" color="#f6c945" />
+    headerRight: <Button onPress={() => alert("She loves to talk!")} title="Facts" color="#f6c945" />
   };
   render() {
     return (
@@ -41,18 +41,18 @@ class BartSimpson extends React.Component {
           resizeMode="cover"
           source={{
             uri:
-              "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_bart_550x960.png"
+              "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Maggie/swsb_character_fact_maggie_550x960.png"
           }}
         />
-        <Text style={[styles.homer_text]}>Bart Simpson</Text>
+        <Text style={[styles.homer_text]}>Maggie Simpson</Text>
         <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
         <Text style={[styles.homer_text2]}>
-          Occupation: Student
+          Occupation: Baby
         </Text>
         <Button
           style={[styles.button]}
           title="Next Profile"
-          onPress={() => this.props.navigation.navigate("MargeSimpson")}
+          onPress={() => this.props.navigation.navigate("SantasHelper")}
         />
         <Button
           title="Character Directory"
@@ -94,4 +94,4 @@ button: {
   color: "red"
 }
 });
-export default BartSimpson;
+export default MaggieSimpson;

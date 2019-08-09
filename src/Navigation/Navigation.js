@@ -8,7 +8,16 @@ import Login from "../../Homescreen/Login";
 import BallBounce from "../../Homescreen/BallBounce";
 import OverlayPage from "../../Homescreen/OverlayPage";
 import Rankings from "../../Homescreen/Rankings";
-
+import MargeSimpson from "../../Profiles/MargeSimpson"
+import LisaSimpson from "../../Profiles/LisaSimpson";
+import MaggieSimpson from "../../Profiles/MaggieSimpson";
+import SantasHelper from "../../Profiles/SantasHelper";
+import BarneyGumble from "../../Profiles/BarneyGumble";
+import MrBurns from "../../Profiles/MrBurns";
+import RalphWiggum from "../../Profiles/RalphWiggum";
+import KentBrockman from "../../Profiles/KentBrockman";
+import OttoMan from "../../Profiles/OttoMan";
+import Scratchy from "../../Profiles/Scratchy";
 
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
@@ -22,14 +31,22 @@ const AppNavigator = createStackNavigator(
     EmployeeDirectory: EmployeeDirectory,
     HomerSimpson: HomerSimpson,
     BartSimpson: BartSimpson,
+    MargeSimpson: MargeSimpson,
+    LisaSimpson: LisaSimpson,
+    MaggieSimpson: MaggieSimpson,
+    SantasHelper: SantasHelper,
+    BarneyGumble: BarneyGumble,
+    MrBurns: MrBurns,
+    KentBrockman: KentBrockman,
+    RalphWiggum: RalphWiggum,
+    OttoMan: OttoMan,
+    Scratchy: Scratchy,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
     Rankings: Rankings,
-
-
   },
   {
-    initialRouteName: "EmployeeDirectory",
+    initialRouteName: "Login",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
@@ -41,5 +58,10 @@ const AppNavigator = createStackNavigator(
 );
 
 export default createAppContainer(AppNavigator);
+
+
+
+
+
 
 
