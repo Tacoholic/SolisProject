@@ -13,7 +13,7 @@ import {
 import { withNavigation } from "react-navigation";
 class BartSimpson extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: "Homer Simpson Profile",
+    title: "Bart Simpson's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },

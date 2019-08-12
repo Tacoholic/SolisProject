@@ -20,6 +20,7 @@ import OttoMan from "../../Profiles/OttoMan";
 import Scratchy from "../../Profiles/Scratchy";
 import HomerGallery from "../../Profiles/HomerGallery";
 import BartGallery from "../../Profiles/BartGallery";
+import MargeGallery from "../../Profiles/MargeGallery";
 
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
@@ -45,12 +46,13 @@ const AppNavigator = createStackNavigator(
     Scratchy: Scratchy,
     HomerGallery: HomerGallery,
     BartGallery: BartGallery,
+    MargeGallery: MargeGallery,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
     Rankings: Rankings
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "MargeSimpson",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },

@@ -25,13 +25,6 @@ class HomeScreen extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: (
-      <Button
-        onPress={() => alert("You have 9 matches today!")}
-        title="INFO"
-        color="fff"
-      />
-    )
   };
   render() {
     return (

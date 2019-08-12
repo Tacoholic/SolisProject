@@ -9,9 +9,14 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import MargeGallery from "./MargeGallery";
+
+import { withNavigation } from 'react-navigation';
+
 class MargeSimpson extends React.Component {
-  static navigationOptions = {
-    title: "Marge Simpson Profile",
+  static navigationOptions = ({ navigation }) => ({
+    title: "Marge Simpson's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -21,12 +26,12 @@ class MargeSimpson extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("She loves to bake pies.")}
-        title="Facts"
+        onPress={() => navigation.navigate("MargeGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -104,4 +109,4 @@ button: {
       marginTop: -90
   }
 });
-export default MargeSimpson;
+export default withNavigation(MargeSimpson)
