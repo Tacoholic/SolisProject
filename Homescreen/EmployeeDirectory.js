@@ -54,6 +54,7 @@ class EmployeeDirectory extends React.Component {
         >
           
           <SearchHeader />
+          <ScrollView>
          
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
@@ -141,6 +142,7 @@ class EmployeeDirectory extends React.Component {
           >
             <Text style={styles.text}>Go to previous screen</Text>
           </TouchableOpacity>
+          </ScrollView>
         </ImageBackground>
       </View>
     );
