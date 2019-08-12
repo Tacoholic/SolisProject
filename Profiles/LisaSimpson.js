@@ -9,8 +9,13 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import LisaGallery from "./LisaGallery";
+
+import { withNavigation } from "react-navigation";
+
 class LisaSimpson extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Lisa Simpson's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -19,8 +24,8 @@ class LisaSimpson extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("She is on the Honor Roll at her school")} title="Facts" color="#f6c945" />
-  };
+    headerRight: <Button onPress={() => navigation.navigate("LisaGallery")} title="Gallery" color="#f6c945" />
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -94,4 +99,5 @@ button: {
   color: "red"
 }
 });
-export default LisaSimpson;
+export default withNavigation(LisaSimpson)
+
