@@ -9,9 +9,14 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
+
+import BurnsGallery from "./BurnsGallery";
+
 class MrBurns extends React.Component {
-  static navigationOptions = {
-    title: "Mr. Burns Profile",
+  static navigationOptions = ({ navigation }) => ({
+    title: "Mr. Burns' Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -21,12 +26,12 @@ class MrBurns extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("He doesn't like people.")}
-        title="Facts"
+        onPress={() => navigation.navigate("BurnsGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -100,6 +105,4 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default MrBurns;
-
-
+export default withNavigation(MrBurns);

@@ -9,8 +9,13 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import BrockmanGallery from "./BrockmanGallery";
+
+import { withNavigation } from "react-navigation";
+
 class KentBrockman extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Kent Brockman's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -21,12 +26,12 @@ class KentBrockman extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("Catch him every night at 6pm!")}
-        title="Facts"
+        onPress={() => navigation.navigate("BrockmanGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -100,6 +105,6 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default KentBrockman;
+export default withNavigation(KentBrockman)
 
 

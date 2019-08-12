@@ -9,8 +9,14 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
+
+import ScratchyGallery from "./ScratchyGallery";
+
+
 class Scratchy extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Scratchy's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -21,12 +27,12 @@ class Scratchy extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("I don't have any interesting facts.")}
-        title="Facts"
+        onPress={() => navigation.navigate("ScratchyGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -100,6 +106,6 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default Scratchy;
+export default withNavigation(Scratchy)
 
 

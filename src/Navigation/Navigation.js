@@ -22,7 +22,14 @@ import HomerGallery from "../../Profiles/HomerGallery";
 import BartGallery from "../../Profiles/BartGallery";
 import MargeGallery from "../../Profiles/MargeGallery";
 import LisaGallery from "../../Profiles/LisaGallery";
-
+import MaggieGallery from "../../Profiles/MaggieGallery";
+import SantasGallery from "../../Profiles/SantasGallery";
+import BarneysGallery from "../../Profiles/BarneysGallery";
+import BurnsGallery from "../../Profiles/BurnsGallery";
+import WiggumGallery from "../../Profiles/WiggumGallery";
+import BrockmanGallery from "../../Profiles/BrockmanGallery";
+import OttoGallery from "../../Profiles/OttoGallery";
+import ScratchyGallery from "../../Profiles/ScratchyGallery";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -49,12 +56,20 @@ const AppNavigator = createStackNavigator(
     BartGallery: BartGallery,
     MargeGallery: MargeGallery,
     LisaGallery: LisaGallery,
+    MaggieGallery: MaggieGallery,
+    SantasGallery: SantasGallery,
+    BarneysGallery: BarneysGallery,
+    BurnsGallery: BurnsGallery,
+    WiggumGallery: WiggumGallery,
+    BrockmanGallery: BrockmanGallery,
+    OttoGallery: OttoGallery, 
+    ScratchyGallery: ScratchyGallery,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
     Rankings: Rankings
   },
   {
-    initialRouteName: "LisaSimpson",
+    initialRouteName: "Login",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
@@ -66,6 +81,7 @@ const AppNavigator = createStackNavigator(
 );
 
 export default createAppContainer(AppNavigator);
+
 
 
 

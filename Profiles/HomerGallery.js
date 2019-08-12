@@ -23,7 +23,6 @@ class HomerGallery extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("Homer is the only child")} title="Facts" color="#f6c945" />
   };
   render() {
     return (<ImageSlider images={[

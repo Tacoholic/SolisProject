@@ -9,9 +9,14 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
+
+import SantasGallery from "./SantasGallery";
+
 class SantasHelper extends React.Component {
-  static navigationOptions = {
-    title: "Santa's Little Helper Profile",
+  static navigationOptions = ({ navigation }) => ({
+    title: "Santa's Little Helper",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -19,8 +24,14 @@ class SantasHelper extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("His favorite holiday is Thanksgiving.")} title="Facts" color="#f6c945" />
-  };
+    headerRight: (
+      <Button
+        onPress={() => navigation.navigate("SantasGallery")}
+        title="Gallery"
+        color="#f6c945"
+      />
+    )
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -94,4 +105,4 @@ button: {
   color: "red"
 }
 });
-export default SantasHelper;
+export default withNavigation(SantasHelper)

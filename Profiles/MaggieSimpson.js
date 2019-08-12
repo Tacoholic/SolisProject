@@ -9,8 +9,13 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import MaggieGallery from "./MaggieGallery";
+
+import { withNavigation } from "react-navigation"
+
 class MaggieSimpson extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Maggie Simpson's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -19,8 +24,8 @@ class MaggieSimpson extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("She loves to talk!")} title="Facts" color="#f6c945" />
-  };
+    headerRight: <Button onPress={() => navigation.navigate("MaggieGallery")} title="Gallery" color="#f6c945" />
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -94,4 +99,4 @@ button: {
   color: "red"
 }
 });
-export default MaggieSimpson;
+export default withNavigation(MaggieSimpson)

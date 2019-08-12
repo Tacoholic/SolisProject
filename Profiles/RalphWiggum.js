@@ -9,8 +9,13 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import WiggumGallery from "./WiggumGallery";
+
+import { withNavigation } from "react-navigation"
+
 class RalphWiggum extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Chief Wiggum's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -21,12 +26,12 @@ class RalphWiggum extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("He looooves donuts!")}
-        title="Facts"
+        onPress={() => navigation.navigate("WiggumGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -101,6 +106,5 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default RalphWiggum;
 
-
+export default withNavigation(RalphWiggum)

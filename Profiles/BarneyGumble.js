@@ -9,9 +9,14 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
+
+import BarneysGallery from "./BarneysGallery";
+
 class BarneyGumble extends React.Component {
-  static navigationOptions = {
-    title: "Barney Gumble Profile",
+  static navigationOptions = ({ navigation }) => ({
+    title: "Barney's Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -21,12 +26,12 @@ class BarneyGumble extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("Homer loves to swim in rivers")}
-        title="Facts"
+        onPress={() => navigation.navigate("BarneysGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -100,4 +105,6 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default BarneyGumble;
+export default withNavigation(BarneyGumble)
+
+
