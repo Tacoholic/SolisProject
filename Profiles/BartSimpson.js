@@ -9,9 +9,11 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
 class BartSimpson extends React.Component {
-  static navigationOptions = {
-    title: "Bart Simpson's Profile",
+  static navigationOptions = ({ navigation }) => ({
+    title: "Homer Simpson Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
@@ -19,8 +21,14 @@ class BartSimpson extends React.Component {
     headerTitleStyle: {
       fontWeight: "bold"
     },
-    headerRight: <Button onPress={() => alert("Bart loves to skateboard")} title="Facts" color="#f6c945" />
-  };
+    headerRight: (
+      <Button
+        onPress={() => navigation.navigate("BartGallery")}
+        title="Gallery"
+        color="#f6c945"
+      />
+    )
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -94,4 +102,7 @@ button: {
   color: "red"
 }
 });
-export default BartSimpson;
+
+export default withNavigation(BartSimpson)
+
+

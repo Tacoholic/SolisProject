@@ -34,7 +34,7 @@ export default class SearchHeader extends React.Component {
       <View style={styles.container}>
         <SearchBar
           inputStyle={{ backgroundColor: "white" }}
-          placeholder="Search for a character"
+          placeholder="Search for a character..."
           placeholderTextColor={"#g5g5g5"}
           onChangeText={this.updateSearch}
           value={search}
@@ -47,8 +47,8 @@ export default class SearchHeader extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    width: 415,
+    width: 390,
     justifyContent: "center",
-    marginTop: -50
+    marginTop: 50
   }
 });

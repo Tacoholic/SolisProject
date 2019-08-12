@@ -13,6 +13,7 @@ import {
 
 import SearchHeader from './SearchHeader';
 
+import { withNavigation } from "react-navigation";
 
 import {
   createStackNavigator,
@@ -23,38 +24,22 @@ import {
 import { SearchBar } from "react-native-elements";
 
 class EmployeeDirectory extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Character Directory",
     headerStyle: {
       backgroundColor: "#53b4e6"
     },
     headerTintColor: "#f6c945",
-    headerTintStyle: {
+    headerTitleStyle: {
       fontWeight: "bold"
-    },
-    headerRight: (
-      <Button
-        onPress={() =>
-          alert("Don't forget to register on our app for prizes and surprises!")
-        }
-        title="INFO"
-        color="#f6c945"
-      />
-    )
-  };
-  
-  state = {
-    search: ""
-  };
-  updateSearch = search => {
-    this.setState({ search });
-  };
+    }
+  });
 
   render() {
-    const { search } = this.state;
+
     return (
       <View style={styles.container}>
-        <ImageBackground
+         <ImageBackground
           source={{
             uri:
               "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
@@ -67,8 +52,9 @@ class EmployeeDirectory extends React.Component {
             alignItems: "center"
           }}
         >
-        
+          
           <SearchHeader />
+         
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("HomerSimpson")}
             style={styles.button}
@@ -191,5 +177,7 @@ const styles = StyleSheet.create({
     width: 260
   }
 });
+export default withNavigation(EmployeeDirectory)
 
-export default EmployeeDirectory;
+
+
