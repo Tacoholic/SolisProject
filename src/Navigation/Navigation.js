@@ -18,6 +18,7 @@ import RalphWiggum from "../../Profiles/RalphWiggum";
 import KentBrockman from "../../Profiles/KentBrockman";
 import OttoMan from "../../Profiles/OttoMan";
 import Scratchy from "../../Profiles/Scratchy";
+import HomerGallery from "../../Profiles/HomerGallery";
 
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
@@ -41,12 +42,13 @@ const AppNavigator = createStackNavigator(
     RalphWiggum: RalphWiggum,
     OttoMan: OttoMan,
     Scratchy: Scratchy,
+    HomerGallery: HomerGallery,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
-    Rankings: Rankings,
+    Rankings: Rankings
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "HomerSimpson",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },

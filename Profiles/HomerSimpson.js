@@ -9,8 +9,18 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+
+import { withNavigation } from "react-navigation";
+import HomerGallery from "./HomerGallery";
+
+import {
+  createStackNavigator,
+  createAppContainer,
+  createBottomTabNavigator
+} from "react-navigation";
+
 class HomerSimpson extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "Homer Simpson Profile",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -21,12 +31,12 @@ class HomerSimpson extends React.Component {
     },
     headerRight: (
       <Button
-        onPress={() => alert("Homer loves to swim in rivers")}
-        title="Facts"
+        onPress={() => navigation.navigate("HomerGallery")}
+        title="Gallery"
         color="#f6c945"
       />
     )
-  };
+  });
   render() {
     return (
       <View style={styles.container}>
@@ -100,6 +110,5 @@ const styles = StyleSheet.create({
     color: "red"
   }
 });
-export default HomerSimpson;
 
-
+export default withNavigation(HomerSimpson)

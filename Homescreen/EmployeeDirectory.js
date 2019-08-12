@@ -11,9 +11,8 @@ import {
   TouchableOpacity
 } from "react-native";
 
-import { Avatar } from 'react-native-elements';
+import SearchHeader from './SearchHeader';
 
-import SearchHeader from './SearchHeader'
 
 import {
   createStackNavigator,
