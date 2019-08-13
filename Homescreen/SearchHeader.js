@@ -25,9 +25,10 @@ export default class SearchHeader extends React.Component {
   state = {
     search: ""
   };
-  updateSearch = search => {
-    this.setState({ search });
-  };
+  // updateSearch = search => {
+  //   this.setState({ search });
+  //   this.updateSearch( search )
+  // };
   render() {
     const { search } = this.state;
     return (

@@ -13,7 +13,10 @@ import {
   createBottomTabNavigator
 } from "react-navigation";
 import DetailsScreen from "./DetailsScreen";
-import { Header } from "react-native/Libraries/NewAppScreen";
+
+
+
+
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -44,6 +47,7 @@ class HomeScreen extends React.Component {
           }}
           style={{ width: "100%", height: "100%" }}
         >
+              
           <Image
             source={{
               uri:

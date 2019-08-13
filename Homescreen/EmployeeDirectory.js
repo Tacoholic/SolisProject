@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Button,
   View,
   Text,
   StyleSheet,
@@ -8,12 +7,16 @@ import {
   Animated,
   ScrollView,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView
 } from "react-native";
 
 import SearchHeader from './SearchHeader';
 
 import { withNavigation } from "react-navigation";
+
+import Row from "../Components/Row";
+import Button from "../Components/Button";
 
 import {
   createStackNavigator,
@@ -35,6 +38,10 @@ class EmployeeDirectory extends React.Component {
     }
   });
 
+  updateSearch = search => {
+  
+  };
+
   render() {
 
     return (
@@ -53,96 +60,91 @@ class EmployeeDirectory extends React.Component {
           }}
         >
           
-          <SearchHeader />
-          <ScrollView>
-         
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("HomerSimpson")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Homer Simpson</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("BartSimpson")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Bart Simpson</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("MargeSimpson")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Marge Simpson</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("LisaSimpson")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Lisa Simpson</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("MaggieSimpson")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Maggie Simpson</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("SantasHelper")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Santa's Little Helper</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("BarneyGumble")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Barney Gumble</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("MrBurns")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Mr. Burns</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("RalphWiggum")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Ralph Wiggum</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("KentBrockman")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Kent Brockman</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("OttoMan")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Otto Mann</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Scratchy")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Scratchy</Text>
-          </TouchableOpacity>
+          <SearchHeader updateSearch={(search) => {
+            this.updateSearch(search)
+          }}/>
 
-          <TouchableOpacity
-            onPress={() => this.props.navigation.navigate("Home")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Home Screen</Text>
-          </TouchableOpacity>
+          <SafeAreaView>
+            <Row>
+              <Button
+              text="Homer Simpson"
+              onPress={() =>this.props.navigation.navigate("HomerSimpson")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Marge Simpson"
+              onPress={() =>this.props.navigation.navigate("MargeSimpson")}
+              />
+            </Row>
 
-          <TouchableOpacity
-            onPress={() => this.props.navigation.goBack("")}
-            style={styles.button}
-          >
-            <Text style={styles.text}>Go to previous screen</Text>
-          </TouchableOpacity>
-          </ScrollView>
+            <Row>
+              <Button
+              text="Bart Simpson"
+              onPress={() =>this.props.navigation.navigate("BartSimpson")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Lisa Simpson"
+              onPress={() =>this.props.navigation.navigate("LisaSimpson")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Maggie Simpson"
+              onPress={() =>this.props.navigation.navigate("MaggieSimpson")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Barney Gumble"
+              onPress={() =>this.props.navigation.navigate("BarneyGumble")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Otto Man"
+              onPress={() =>this.props.navigation.navigate("OttoMan")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Kent Brockman"
+              onPress={() =>this.props.navigation.navigate("KentBrockman")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Mr. Burns"
+              onPress={() =>this.props.navigation.navigate("MrBurns")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Santa's Little Helper"
+              onPress={() =>this.props.navigation.navigate("SantasHelper")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Ralph Wiggum"
+              onPress={() =>this.props.navigation.navigate("RalphWiggum")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Scratchy"
+              onPress={() =>this.props.navigation.navigate("Scratchy")}
+              />
+            </Row>
+            <Row>
+              <Button
+              text="Homepage"
+              onPress={() =>this.props.navigation.navigate("Home")}
+              />
+            </Row>
+            </SafeAreaView>
         </ImageBackground>
       </View>
     );
@@ -156,30 +158,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignContent: "center"
   },
-  text: {
-    fontSize: 25,
-    fontWeight: "bold",
-    color: "#f6c945",
-    alignItems: "center",
-    justifyContent: "center",
-    alignContent: "center"
-  },
-  button: {
-    flexDirection: "row",
-    backgroundColor: "#2d98da",
-    alignItems: "center",
-    justifyContent: "center",
-    alignContent: "center",
-    marginTop: 10,
-    marginBottom: 10,
-    borderRadius: 10,
-    borderWidth: 1.0,
-    borderColor: "black",
-    height: 30,
-    width: 260
-  }
 });
 export default withNavigation(EmployeeDirectory)
-
-
 
