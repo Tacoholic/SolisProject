@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import CircleSizeSelector from "react-native-circle-size-selector";
+
+
 type State = {
-  value: number
+  value: number,
 };
+
+
 const InitialValue = 1;
-export default class App extends Component<void, State> {
+
+
+export default class CircleSize extends Component<void, State> {
     static navigationOptions = {
         title: "Question of the day",
         headerStyle: {

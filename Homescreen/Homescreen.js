@@ -13,6 +13,7 @@ import {
   createBottomTabNavigator
 } from "react-navigation";
 import DetailsScreen from "./DetailsScreen";
+import CircleSize from "./CircleSize";
 
 
 
@@ -78,6 +79,10 @@ class HomeScreen extends React.Component {
            <Button
             title="Lets have some more fun"
             onPress={() => this.props.navigation.navigate("Rankings")}
+          />
+          <Button
+            title="Rank Sunday's Show"
+            onPress={() => this.props.navigation.navigate("CircleSize")}
           />
         </ImageBackground>
       </View>
