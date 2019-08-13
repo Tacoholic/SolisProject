@@ -30,6 +30,8 @@ import WiggumGallery from "../../Profiles/WiggumGallery";
 import BrockmanGallery from "../../Profiles/BrockmanGallery";
 import OttoGallery from "../../Profiles/OttoGallery";
 import ScratchyGallery from "../../Profiles/ScratchyGallery";
+import CircleSizeSelector from "../../Homescreen/CircleSizeSelector";
+
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -66,10 +68,11 @@ const AppNavigator = createStackNavigator(
     ScratchyGallery: ScratchyGallery,
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
-    Rankings: Rankings
+    Rankings: Rankings,
+    CircleSizeSelector: CircleSizeSelector
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "CircleSizeSelector",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
