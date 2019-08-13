@@ -11,7 +11,7 @@ import {
   SafeAreaView
 } from "react-native";
 
-import SearchHeader from './SearchHeader';
+import SearchHeader from "./SearchHeader";
 
 import { withNavigation } from "react-navigation";
 
@@ -26,7 +26,31 @@ import {
 
 import { SearchBar } from "react-native-elements";
 
+
+const items = [
+  {name: "Homer Simpson", screen: "HomerSimpson"},
+  {name: "Marge Simpson", screen: "MargeSimpson"},
+  {name: "Bart Simpson", screen: "BartSimpson"},
+  {name: "Lisa Simpson", screen: "LisaSimpson"},
+  {name: "Maggie Simpson", screen: "MaggieSimpson"},
+  {name: "Barney Gumble", screen: "BarneyGumble"},
+  {name: "Kent Brockman", screen: "KentBrockman"},
+  {name: "Mr. Burns", screen: "MrBurns"},
+  {name: "Ralph Wiggum", screen: "RalphWiggum"},
+  {name: "Otto Man", screen: "OttoMann"},
+  {name: "Kent Brockman", screen: "KentBrockman"},
+  {name: "Santa's Little Helper", screen: "SantasHelper"},
+  {name: "Scratchy", screen: "Scratchy"},
+  {name: "Homepage", screen: "Home"},
+];
+
 class EmployeeDirectory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: []
+    };
+  }
   static navigationOptions = ({ navigation }) => ({
     title: "Character Directory",
     headerStyle: {
@@ -38,15 +62,21 @@ class EmployeeDirectory extends React.Component {
     }
   });
 
-  updateSearch = search => {
+  componentDidMount() {
+    this.setState({
+      data: items
+    })
+  }
   
-  };
+  updateSearch(search){
+var data = items.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
+this.setState({data})
+  } 
 
   render() {
-
     return (
       <View style={styles.container}>
-         <ImageBackground
+        <ImageBackground
           source={{
             uri:
               "https://backgrounddownload.com/wp-content/uploads/2018/09/simpsons-clouds-background-5.jpg"
@@ -59,92 +89,24 @@ class EmployeeDirectory extends React.Component {
             alignItems: "center"
           }}
         >
-          
-          <SearchHeader updateSearch={(search) => {
-            this.updateSearch(search)
-          }}/>
+          <SearchHeader
+            updateSearch={search => {
+              this.updateSearch(search);
+            }}
+          />
 
           <SafeAreaView>
-            <Row>
-              <Button
-              text="Homer Simpson"
-              onPress={() =>this.props.navigation.navigate("HomerSimpson")}
+            <ScrollView>
+            {this.state.data.map((item)=> {
+              return(
+                <Button
+                text={item.name}
+                onPress={() => this.props.navigation.navigate(item.screen)}
               />
-            </Row>
-            <Row>
-              <Button
-              text="Marge Simpson"
-              onPress={() =>this.props.navigation.navigate("MargeSimpson")}
-              />
-            </Row>
-
-            <Row>
-              <Button
-              text="Bart Simpson"
-              onPress={() =>this.props.navigation.navigate("BartSimpson")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Lisa Simpson"
-              onPress={() =>this.props.navigation.navigate("LisaSimpson")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Maggie Simpson"
-              onPress={() =>this.props.navigation.navigate("MaggieSimpson")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Barney Gumble"
-              onPress={() =>this.props.navigation.navigate("BarneyGumble")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Otto Man"
-              onPress={() =>this.props.navigation.navigate("OttoMan")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Kent Brockman"
-              onPress={() =>this.props.navigation.navigate("KentBrockman")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Mr. Burns"
-              onPress={() =>this.props.navigation.navigate("MrBurns")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Santa's Little Helper"
-              onPress={() =>this.props.navigation.navigate("SantasHelper")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Ralph Wiggum"
-              onPress={() =>this.props.navigation.navigate("RalphWiggum")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Scratchy"
-              onPress={() =>this.props.navigation.navigate("Scratchy")}
-              />
-            </Row>
-            <Row>
-              <Button
-              text="Homepage"
-              onPress={() =>this.props.navigation.navigate("Home")}
-              />
-            </Row>
-            </SafeAreaView>
+              )
+            })}
+            </ScrollView>
+          </SafeAreaView>
         </ImageBackground>
       </View>
     );
@@ -157,7 +119,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignContent: "center"
-  },
+  }
 });
-export default withNavigation(EmployeeDirectory)
-
+export default withNavigation(EmployeeDirectory);

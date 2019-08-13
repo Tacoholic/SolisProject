@@ -19,26 +19,41 @@ import {
 
 import { SearchBar } from "react-native-elements";
 
-// import MaterialCommunications from 'react-native-vector-icons';
+// const items = [
+//   "Homer Simpson",
+//   "Marge Simpson",
+//   "Bart Simpson",
+//   "Lisa Simpson"
+// ];
 
 export default class SearchHeader extends React.Component {
-  state = {
-    search: ""
-  };
-  // updateSearch = search => {
-  //   this.setState({ search });
-  //   this.updateSearch( search )
-  // };
+  constructor(props) {
+    super(props);
+    this.state = {
+      results: [],
+      searchText: ""
+    };
+    this._handleResults = this._handleResults.bind(this);
+  }
+
+  _handleResults(text) {
+    this.setState({ searchText: text });
+    this.props.updateSearch(text)
+  }
+
+
   render() {
     const { search } = this.state;
     return (
       <View style={styles.container}>
         <SearchBar
           inputStyle={{ backgroundColor: "white" }}
+          ref={(ref) => this.searchBar = ref }
+          value={this.state.searchText}
           placeholder="Search for a character..."
-          placeholderTextColor={"#g5g5g5"}
-          onChangeText={this.updateSearch}
-          value={search}
+          placeholderTextColor={"red"}
+          onChangeText={(text) => this._handleResults(text)}
+          results={search}
         />
       </View>
     );
