@@ -72,7 +72,7 @@ const AppNavigator = createStackNavigator(
     CircleSize: CircleSize
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
