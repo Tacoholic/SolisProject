@@ -14,6 +14,8 @@ import { withNavigation } from "react-navigation";
 
 import BarneysGallery from "./BarneysGallery";
 
+import TEMP_CHARACTERS from "../Data/Characters";
+
 class BarneyGumble extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: "Barney's Profile",
@@ -33,6 +35,7 @@ class BarneyGumble extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -45,8 +48,9 @@ class BarneyGumble extends React.Component {
           <Image
             style={{
               width: "80%",
-              height: "65%",
-              marginTop: 50,
+              height: "80%",
+              marginTop: -50,
+              marginBottom: -30,
               alignItems: "center"
             }}
             resizeMode="cover"
@@ -55,10 +59,11 @@ class BarneyGumble extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_barney_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Barney Gumble</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+          <Text style={[styles.homer_text]}>
+            First name: {characters[5].name}
+          </Text>
           <Text style={[styles.homer_text2]}>
-            Occupation: Homer's best friend
+            Occupation: {characters[5].occupation}
           </Text>
           <Button
             style={[styles.button]}
@@ -88,7 +93,7 @@ const styles = StyleSheet.create({
     color: "black",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center"
+    textAlign: "center",
   },
   homer_text2: {
     color: "black",

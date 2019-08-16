@@ -12,6 +12,8 @@ import {
 
 import WiggumGallery from "./WiggumGallery";
 
+import TEMP_CHARACTERS from "../Data/Characters";
+
 import { withNavigation } from "react-navigation"
 
 class RalphWiggum extends React.Component {
@@ -33,6 +35,7 @@ class RalphWiggum extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -56,10 +59,11 @@ class RalphWiggum extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_wiggum_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Chief Wiggum</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+        <Text style={[styles.homer_text]}>
+            First name: {characters[8].name}
+          </Text>
           <Text style={[styles.homer_text2]}>
-            Occupation: Springfield Police Officer
+            Occupation: {characters[8].occupation}
           </Text>
           <Button
             style={[styles.button]}

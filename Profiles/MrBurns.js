@@ -13,6 +13,7 @@ import {
 import { withNavigation } from "react-navigation";
 
 import BurnsGallery from "./BurnsGallery";
+import TEMP_CHARACTERS from "../Data/Characters";
 
 class MrBurns extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -33,6 +34,7 @@ class MrBurns extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -55,10 +57,11 @@ class MrBurns extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Mr-Burns/swsb_character_fact_burns_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Mr. Burns </Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+          <Text style={[styles.homer_text]}>
+            First name: {characters[7].name}
+          </Text>
           <Text style={[styles.homer_text2]}>
-            Occupation: Nuclear Power Plant Owner
+            Occupation: {characters[7].occupation}
           </Text>
           <Button
             style={[styles.button]}

@@ -12,7 +12,10 @@ import {
 
 import MaggieGallery from "./MaggieGallery";
 
-import { withNavigation } from "react-navigation"
+import { withNavigation } from "react-navigation";
+
+import TEMP_CHARACTERS from "../Data/Characters";
+
 
 class MaggieSimpson extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -27,6 +30,7 @@ class MaggieSimpson extends React.Component {
     headerRight: <Button onPress={() => navigation.navigate("MaggieGallery")} title="Gallery" color="#f6c945" />
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
       <ImageBackground
@@ -49,11 +53,12 @@ class MaggieSimpson extends React.Component {
               "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Maggie/swsb_character_fact_maggie_550x960.png"
           }}
         />
-        <Text style={[styles.homer_text]}>Maggie Simpson</Text>
-        <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-        <Text style={[styles.homer_text2]}>
-          Occupation: Baby
-        </Text>
+         <Text style={[styles.homer_text]}>
+            First name: {characters[4].name}
+          </Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[4].occupation}
+          </Text>
         <Button
           style={[styles.button]}
           title="Next Profile"

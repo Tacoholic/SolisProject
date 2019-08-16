@@ -19,6 +19,8 @@ import {
   createBottomTabNavigator
 } from "react-navigation";
 
+import TEMP_CHARACTERS from "../Data/Characters";
+
 class HomerSimpson extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: "Homer Simpson Profile",
@@ -37,7 +39,9 @@ class HomerSimpson extends React.Component {
       />
     )
   });
+
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -60,29 +64,18 @@ class HomerSimpson extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-sidebar/character-facts/Homer/swsb_character_fact_homer_288x763.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Homer Simpson</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-          <Text style={[styles.homer_text2]}>
-            Occupation: Nuclear Safety Inspector
+          <Text style={[styles.homer_text]}>
+            First name: {characters[0].name}
           </Text>
-          <Button
-            style={[styles.button]}
-            title="Next Profile"
-            onPress={() => this.props.navigation.navigate("BartSimpson")}
-          />
-          <Button
-            title="Character Directory"
-            onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
-          />
-          <Button
-            title="Homepage"
-            onPress={() => this.props.navigation.navigate("Home")}
-          />
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[0].occupation}
+          </Text>
         </ImageBackground>
       </View>
     );
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
@@ -111,4 +104,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withNavigation(HomerSimpson)
+export default withNavigation(HomerSimpson);
+

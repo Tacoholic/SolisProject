@@ -14,6 +14,8 @@ import BrockmanGallery from "./BrockmanGallery";
 
 import { withNavigation } from "react-navigation";
 
+import TEMP_CHARACTERS from "../Data/Characters";
+
 class KentBrockman extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: "Kent Brockman's Profile",
@@ -33,6 +35,7 @@ class KentBrockman extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -55,10 +58,11 @@ class KentBrockman extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_kent_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Kent Brockman</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+          <Text style={[styles.homer_text]}>
+            First name: {characters[6].name}
+          </Text>
           <Text style={[styles.homer_text2]}>
-            Occupation: News Anchor
+            Occupation: {characters[6].occupation}
           </Text>
           <Button
             style={[styles.button]}

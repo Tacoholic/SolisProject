@@ -12,6 +12,7 @@ import {
 
 import { withNavigation } from "react-navigation";
 
+import TEMP_CHARACTERS from "../Data/Characters";
 import SantasGallery from "./SantasGallery";
 
 class SantasHelper extends React.Component {
@@ -33,6 +34,7 @@ class SantasHelper extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
       <ImageBackground
@@ -55,11 +57,13 @@ class SantasHelper extends React.Component {
               "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_santaslittlehelper_550x960.png"
           }}
         />
-        <Text style={[styles.homer_text]}>Santas Little Helper</Text>
-        <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-        <Text style={[styles.homer_text2]}>
-          Occupation: Family Dog
-        </Text>
+        <Text style={[styles.homer_text]}>
+            First name: {characters[10].name}
+          </Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[10].occupation}
+          </Text>
+      
         <Button
           style={[styles.button]}
           title="Next Profile"

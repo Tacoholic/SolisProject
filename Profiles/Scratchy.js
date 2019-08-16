@@ -14,6 +14,7 @@ import { withNavigation } from "react-navigation";
 
 import ScratchyGallery from "./ScratchyGallery";
 
+import TEMP_CHARACTERS from "../Data/Characters";
 
 class Scratchy extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -34,6 +35,7 @@ class Scratchy extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -56,16 +58,13 @@ class Scratchy extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_scratchy_550x960-1.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Scratchy</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-          <Text style={[styles.homer_text2]}>
-            Occupation: Cartoon Character
+          <Text style={[styles.homer_text]}>
+            First name: {characters[11].name}
           </Text>
-          {/* <Button
-            style={[styles.button]}
-            title="Next Profile"
-            onPress={() => this.props.navigation.navigate("BartSimpson")}
-          /> */}
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[11].occupation}
+          </Text>
+         
           <Button
             title="Character Directory"
             onPress={() => this.props.navigation.navigate("EmployeeDirectory")}

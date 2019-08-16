@@ -11,6 +11,7 @@ import {
 } from "react-native";
 
 import { withNavigation } from "react-navigation";
+import TEMP_CHARACTERS from "../Data/Characters";
 
 import OttoGallery from "./OttoGallery"; 
 
@@ -33,6 +34,7 @@ class OttoMan extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -55,10 +57,11 @@ class OttoMan extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_otto_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Otto Man</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
+        <Text style={[styles.homer_text]}>
+            First name: {characters[9].name}
+          </Text>
           <Text style={[styles.homer_text2]}>
-            Occupation: School Bus Driver
+            Occupation: {characters[9].occupation}
           </Text>
           <Button
             style={[styles.button]}

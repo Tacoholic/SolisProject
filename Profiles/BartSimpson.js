@@ -9,6 +9,7 @@ import {
   ListItem,
   ImageBackground
 } from "react-native";
+import TEMP_CHARACTERS from "../Data/Characters";
 
 import { withNavigation } from "react-navigation";
 class BartSimpson extends React.Component {
@@ -30,6 +31,7 @@ class BartSimpson extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
       <ImageBackground
@@ -52,11 +54,12 @@ class BartSimpson extends React.Component {
               "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/swsb_character_fact_bart_550x960.png"
           }}
         />
-        <Text style={[styles.homer_text]}>Bart Simpson</Text>
-        <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-        <Text style={[styles.homer_text2]}>
-          Occupation: Student
-        </Text>
+      <Text style={[styles.homer_text]}>
+            First name: {characters[2].name}
+          </Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[2].occupation}
+          </Text>
         <Button
           style={[styles.button]}
           title="Next Profile"
@@ -104,5 +107,7 @@ button: {
 });
 
 export default withNavigation(BartSimpson)
+
+
 
 

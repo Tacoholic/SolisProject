@@ -31,7 +31,7 @@ import BrockmanGallery from "../../Profiles/BrockmanGallery";
 import OttoGallery from "../../Profiles/OttoGallery";
 import ScratchyGallery from "../../Profiles/ScratchyGallery";
 import CircleSize from "../../Homescreen/CircleSize";
-
+import ExampleView from "../../Animations/ExampleView";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -69,7 +69,8 @@ const AppNavigator = createStackNavigator(
     BallBounce: BallBounce,
     OverlayPage: OverlayPage, 
     Rankings: Rankings,
-    CircleSize: CircleSize
+    CircleSize: CircleSize,
+    ExampleView: ExampleView
   },
   {
     initialRouteName: "Login",

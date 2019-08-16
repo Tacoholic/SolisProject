@@ -13,6 +13,8 @@ import {
 import MargeGallery from "./MargeGallery";
 
 import { withNavigation } from 'react-navigation';
+import TEMP_CHARACTERS from "../Data/Characters";
+
 
 class MargeSimpson extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -33,6 +35,7 @@ class MargeSimpson extends React.Component {
     )
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
         <ImageBackground
@@ -57,9 +60,12 @@ class MargeSimpson extends React.Component {
                 "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Marge/swsb_character_fact_marge_550x960.png"
             }}
           />
-          <Text style={[styles.homer_text]}>Marge Simpson</Text>
-          <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-          <Text style={[styles.homer_text2]}>Occupation: Homemaker</Text>
+           <Text style={[styles.homer_text]}>
+            First name: {characters[1].name}
+          </Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[1].occupation}
+          </Text>
           <Button
             style={styles.button}
             title="Next Profile"

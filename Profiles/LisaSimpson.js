@@ -10,6 +10,7 @@ import {
   ImageBackground
 } from "react-native";
 
+import TEMP_CHARACTERS from "../Data/Characters";
 import LisaGallery from "./LisaGallery";
 
 import { withNavigation } from "react-navigation";
@@ -27,6 +28,7 @@ class LisaSimpson extends React.Component {
     headerRight: <Button onPress={() => navigation.navigate("LisaGallery")} title="Gallery" color="#f6c945" />
   });
   render() {
+    const characters = TEMP_CHARACTERS;
     return (
       <View style={styles.container}>
       <ImageBackground
@@ -49,11 +51,14 @@ class LisaSimpson extends React.Component {
               "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Lisa/swsb_character_fact_lisa_550x960.png"
           }}
         />
-        <Text style={[styles.homer_text]}>Lisa Simpson</Text>
-        <Text style={[styles.homer_text2]}>Hometown: Springfield</Text>
-        <Text style={[styles.homer_text2]}>
-          Occupation: Student
-        </Text>
+    
+    <Text style={[styles.homer_text]}>
+            First name: {characters[3].name}
+          </Text>
+          <Text style={[styles.homer_text2]}>
+            Occupation: {characters[3].occupation}
+          </Text>
+
         <Button
           style={[styles.button]}
           title="Next Profile"

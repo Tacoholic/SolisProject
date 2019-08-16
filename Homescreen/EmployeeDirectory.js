@@ -96,7 +96,7 @@ this.setState({data})
           />
 
           <SafeAreaView>
-            <ScrollView>
+        
             {this.state.data.map((item)=> {
               return(
                 <Button
@@ -105,7 +105,7 @@ this.setState({data})
               />
               )
             })}
-            </ScrollView>
+        
           </SafeAreaView>
         </ImageBackground>
       </View>
