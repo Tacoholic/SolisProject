@@ -19,13 +19,6 @@ import {
 
 import { SearchBar } from "react-native-elements";
 
-// const items = [
-//   "Homer Simpson",
-//   "Marge Simpson",
-//   "Bart Simpson",
-//   "Lisa Simpson"
-// ];
-
 export default class SearchHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -65,6 +58,6 @@ const styles = StyleSheet.create({
     height: 50,
     width: 390,
     justifyContent: "center",
-    marginTop: 50
+    marginTop: 100
   }
 });

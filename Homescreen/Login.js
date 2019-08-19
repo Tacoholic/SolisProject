@@ -4,49 +4,43 @@ import {
   View,
   Text,
   Image,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  height
 } from "react-native";
 import LoginForm from "./LoginForm";
+import Video from "react-native-video";
+import SimpsonsIntro from "./SimpsonsIntro.mp4";
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
   }
   static navigationOptions = {
-    title: "React Native App",
+    title: "The Simpsons App",
     headerStyle: {
       backgroundColor: "#53b4e6"
     }
   };
   render() {
-    console.warn("hello", this.props);
-    debugger;
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.logoContainer}>
-          <Image
-            source={{
-              uri: "http://clipart-library.com/images/8cAEnpM6i.png"
-            }}
-            style={{
-              width: 200,
-              height: 200,
-              justifyContent: "center",
-              alignContent: "center",
-              marginTop: 20,
-              marginBottom: 20
-            }}
-            resizeMode="cover"
+          <Video
+            source={SimpsonsIntro}
+            style={styles.backgroundVideo}
+            muted={false}
+            repeat={true}
+            resizeMode={"cover"}
+            rate={1.0}
+            ignoreSilentSwitch={"obey"}
           />
-          <Text style={styles.title}>Welcome, please login!</Text>
         </View>
-
-        <View style={styles.formContainer} />
         <LoginForm navigation={this.props.navigation} />
+
       </KeyboardAvoidingView>
     );
   }
-} 
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -56,10 +50,17 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: "center",
     flexGrow: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+    marginTop: 30
   },
-  title: {
-    color: "black",
-    fontWeight: "bold"
+  backgroundVideo: {
+    height: height,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    alignItems: "stretch",
+    bottom: 0,
+    right: 0,
+    marginTop: -100
   }
 });

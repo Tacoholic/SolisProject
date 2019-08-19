@@ -26,22 +26,21 @@ import {
 
 import { SearchBar } from "react-native-elements";
 
-
 const items = [
-  {name: "Homer Simpson", screen: "HomerSimpson"},
-  {name: "Marge Simpson", screen: "MargeSimpson"},
-  {name: "Bart Simpson", screen: "BartSimpson"},
-  {name: "Lisa Simpson", screen: "LisaSimpson"},
-  {name: "Maggie Simpson", screen: "MaggieSimpson"},
-  {name: "Barney Gumble", screen: "BarneyGumble"},
-  {name: "Kent Brockman", screen: "KentBrockman"},
-  {name: "Mr. Burns", screen: "MrBurns"},
-  {name: "Ralph Wiggum", screen: "RalphWiggum"},
-  {name: "Otto Man", screen: "OttoMann"},
-  {name: "Kent Brockman", screen: "KentBrockman"},
-  {name: "Santa's Little Helper", screen: "SantasHelper"},
-  {name: "Scratchy", screen: "Scratchy"},
-  {name: "Homepage", screen: "Home"},
+  { name: "Homer Simpson", screen: "HomerSimpson" },
+  { name: "Marge Simpson", screen: "MargeSimpson" },
+  { name: "Bart Simpson", screen: "BartSimpson" },
+  { name: "Lisa Simpson", screen: "LisaSimpson" },
+  { name: "Maggie Simpson", screen: "MaggieSimpson" },
+  { name: "Barney Gumble", screen: "BarneyGumble" },
+  { name: "Kent Brockman", screen: "KentBrockman" },
+  { name: "Mr. Burns", screen: "MrBurns" },
+  { name: "Ralph Wiggum", screen: "RalphWiggum" },
+  { name: "Otto Man", screen: "OttoMann" },
+  { name: "Kent Brockman", screen: "KentBrockman" },
+  { name: "Santa's Little Helper", screen: "SantasHelper" },
+  { name: "Scratchy", screen: "Scratchy" },
+  { name: "Homepage", screen: "Home" }
 ];
 
 class EmployeeDirectory extends React.Component {
@@ -65,13 +64,15 @@ class EmployeeDirectory extends React.Component {
   componentDidMount() {
     this.setState({
       data: items
-    })
+    });
   }
-  
-  updateSearch(search){
-var data = items.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
-this.setState({data})
-  } 
+
+  updateSearch(search) {
+    var data = items.filter(item =>
+      item.name.toLowerCase().includes(search.toLowerCase())
+    );
+    this.setState({ data });
+  }
 
   render() {
     return (
@@ -96,16 +97,14 @@ this.setState({data})
           />
 
           <SafeAreaView>
-        
-            {this.state.data.map((item)=> {
-              return(
+            {this.state.data.map(item => {
+              return (
                 <Button
-                text={item.name}
-                onPress={() => this.props.navigation.navigate(item.screen)}
-              />
-              )
+                  text={item.name}
+                  onPress={() => this.props.navigation.navigate(item.screen)}
+                />
+              );
             })}
-        
           </SafeAreaView>
         </ImageBackground>
       </View>

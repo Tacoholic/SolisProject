@@ -23,7 +23,9 @@
     "react-native-swiper": "^1.5.14",
     "react-native-timed-slideshow": "^1.2.1",
     "react-native-vector-icons": "^6.6.0",
+    "react-native-video": "^5.0.0",
     "react-navigation": "^3.11.1",
+    "styled-components": "^4.3.2",
     "tcomb-form-native": "^0.6.20"
   },
   "devDependencies": {
