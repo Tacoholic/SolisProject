@@ -32,12 +32,14 @@ import OttoGallery from "../../Profiles/OttoGallery";
 import ScratchyGallery from "../../Profiles/ScratchyGallery";
 import CircleSize from "../../Homescreen/CircleSize";
 import ExampleView from "../../Animations/ExampleView";
+import RegForm from "../../Signup/RegForm";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const AppNavigator = createStackNavigator(
   {
     Login: Login,
+    RegForm: RegForm,
     Home: HomeScreen,
     Details: DetailsScreen,
     Bio: BioScreen,

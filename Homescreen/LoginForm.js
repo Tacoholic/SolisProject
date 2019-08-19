@@ -15,6 +15,8 @@ import {
 
 import AsyncStorage from "@react-native-community/async-storage";
 
+import navigation from "react-navigation";
+
 export default class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -47,11 +49,14 @@ export default class LoginForm extends Component {
         >
           <Text style={styles.buttonText}>LOGIN</Text>
         </TouchableOpacity>
+        <View style={styles.signupTextCont}>
+          <Text style={styles.signupText}>Don't have an account?</Text>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("RegForm")}><Text style={styles.signupButton}>Signup</Text></TouchableOpacity>
+        </View>
       </View>
     );
   }
   _signInAsync() {
-    // await AsyncStorage.setItem("userToken", "abc");
 
     this.props.navigation.navigate("Home");
   }
@@ -79,5 +84,23 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "red",
     fontWeight: "700"
+  },
+  signupTextCont:{
+    flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: "row"
+  },
+  signupText: {
+    color: "#f6c945",
+    fontSize: 16,
+    fontWeight: "bold"
+  },
+  signupButton: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "500"
   }
 });
+
+

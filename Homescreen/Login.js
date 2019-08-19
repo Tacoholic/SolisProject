@@ -19,7 +19,12 @@ export default class Login extends Component {
     title: "The Simpsons App",
     headerStyle: {
       backgroundColor: "#53b4e6"
-    }
+    },
+    headerTintColor: "#f6c945",
+    headerTitleStyle: {
+      fontWeight: "bold"
+    },
+   
   };
   render() {
     return (
