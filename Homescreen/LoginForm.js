@@ -27,7 +27,7 @@ export default class LoginForm extends Component {
       <View style={styles.container}>
         <TextInput
           style={styles.input}
-          placeholder="Email"
+          placeholder="Email or username"
           placeholderTextColor="black"
           returnKeyType="next"
           onSubmitEditing={() => this.passwordInput.focus()}

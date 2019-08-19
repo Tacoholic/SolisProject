@@ -41,11 +41,7 @@ export default class RegForm extends Component {
         },
       };
 
-      handleSubmit = () => {
-          const value = this._form.getValue();
-          console.log('value', value);
-      }
-
+    
 
   render() {
     return (
@@ -58,7 +54,7 @@ export default class RegForm extends Component {
         />
         <Button 
             title="Sign up!"
-            onPress={this.handleSubmit}
+            onPress={() => this.props.navigation.navigate("Login")}
             />
       </View>
     );
@@ -67,9 +63,12 @@ export default class RegForm extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: "center",
-    marginTop: 50,
+    marginTop: -100,
     padding: 20,
-    backgroundColor: "#ffffff"
+    backgroundColor: "#53b4e6"
   }
 });
+
+
