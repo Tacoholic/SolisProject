@@ -16,6 +16,7 @@ import DetailsScreen from "./DetailsScreen";
 import CircleSize from "./CircleSize";
 
 
+import TEMP_CHARACTERS from "../Data/Characters";
 
 
 
@@ -70,7 +71,7 @@ class HomeScreen extends React.Component {
           />
           <Button
             title="Character Directory"
-            onPress={() => this.props.navigation.navigate("EmployeeDirectory")}
+            onPress={() => this.props.navigation.navigate("CharacterDirectory")}
           />
            <Button
             title="Lets have some fun"
