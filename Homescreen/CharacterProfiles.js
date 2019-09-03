@@ -32,7 +32,7 @@ class CharacterProfiles extends React.Component {
         >
           <Image
             source={{ uri: item.url }}
-            style={{ width: "100%", height: "100%", marginTop: -250, alignItems: "center" }}
+            style={{ width: "100%", height: "100%", marginTop: -100, marginBottom: 10, alignItems: "center" }}
             resizeMode="cover"
           />
           <Text style={[styles.charactertext]}>Name: {item.name}</Text>
@@ -41,7 +41,7 @@ class CharacterProfiles extends React.Component {
             title="Character Directory"
             onPress={() => this.props.navigation.navigate("CharacterDirectory")}
           />
-          <Button
+          <Button 
             title="Homepage"
             onPress={() => this.props.navigation.navigate("Home")}
           />
@@ -56,14 +56,12 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   charactertext: {
-    fontSize: 35,
+    marginTop: -50,
+    fontSize: 25,
     color: "black",
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-
-
-
   },
   charactertext2: {
     color: "black",
@@ -73,3 +71,4 @@ const styles = StyleSheet.create({
 });
 
 export default CharacterProfiles;
+

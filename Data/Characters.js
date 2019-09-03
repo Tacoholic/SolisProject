@@ -2,7 +2,7 @@
 const characters = [
   { id: "1", name: "Homer Simpson", occupation: "Nuclear Safety Inspector", 
     url:
-      "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-sidebar/character-facts/Homer/swsb_character_fact_homer_288x763.png"
+      "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Homer/swsb_character_fact_homer_550x960.png"
    },
   { id: "2", name: "Marge Simpson", occupation: "Stay-at-home mom", url:
   "https://assets.fxnetworks.com/cms/prod/shows/the-simpsons/photos/simpsons-character/Marge/swsb_character_fact_marge_550x960.png"},

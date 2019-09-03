@@ -28,7 +28,7 @@ const AppNavigator = createStackNavigator(
 
   },
   {
-    initialRouteName: "Login",
+    initialRouteName: "CharacterDirectory",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
