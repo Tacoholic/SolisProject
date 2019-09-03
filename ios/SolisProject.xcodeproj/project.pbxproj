@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* SolisProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SolisProjectTests.m */; };
 		0B05A5BB99F34A5DBA9BD995 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A2B581378854672B8287D0C /* FontAwesome.ttf */; };

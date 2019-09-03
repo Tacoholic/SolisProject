@@ -3,12 +3,12 @@ import DetailsScreen from "../../Homescreen/DetailsScreen";
 import BioScreen from "../../Homescreen/BioScreen";
 import Login from "../../Homescreen/Login";
 import BallBounce from "../../Homescreen/BallBounce";
-import OverlayPage from "../../Homescreen/OverlayPage";
 import Rankings from "../../Homescreen/Rankings";
 import CircleSize from "../../Homescreen/CircleSize";
 import RegForm from "../../Signup/RegForm";
 import CharacterDirectory from "../../Homescreen/CharacterDirectory";
 import CharacterProfiles from "../../Homescreen/CharacterProfiles";
+
 
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
@@ -23,9 +23,9 @@ const AppNavigator = createStackNavigator(
     CharacterProfiles: CharacterProfiles,
     CharacterDirectory: CharacterDirectory,
     BallBounce: BallBounce,
-    OverlayPage: OverlayPage, 
     Rankings: Rankings,
     CircleSize: CircleSize,
+
   },
   {
     initialRouteName: "Login",
