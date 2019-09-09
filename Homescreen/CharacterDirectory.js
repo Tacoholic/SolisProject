@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import {
-  Text,
-  View,
-  StyleSheet,
-  ImageBackground,
-} from "react-native";
+import { Text, View, StyleSheet, ImageBackground } from "react-native";
 import { withNavigation } from "react-navigation";
 import {
   createStackNavigator,

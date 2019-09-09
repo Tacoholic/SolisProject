@@ -8,6 +8,9 @@ import CircleSize from "../../Homescreen/CircleSize";
 import RegForm from "../../Signup/RegForm";
 import CharacterDirectory from "../../Homescreen/CharacterDirectory";
 import CharacterProfiles from "../../Homescreen/CharacterProfiles";
+import ImageGallery from "../../Homescreen/ImageGallery";
+import HeartAnimation from "../../Homescreen/HeartAnimation";
+
 
 
 
@@ -25,10 +28,12 @@ const AppNavigator = createStackNavigator(
     BallBounce: BallBounce,
     Rankings: Rankings,
     CircleSize: CircleSize,
-
+    ImageGallery: ImageGallery,
+    Heart: HeartAnimation
+  
   },
   {
-    initialRouteName: "CharacterDirectory",
+    initialRouteName: "Login",
     defaultNavigationOptions: {
         headerStyle: '#f4511e',
     },
@@ -40,6 +45,8 @@ const AppNavigator = createStackNavigator(
 );
 
 export default createAppContainer(AppNavigator);
+
+
 
 
 

@@ -7,9 +7,12 @@ import {
   Button,
   ImageBackground
 } from "react-native";
+import ImageGallery from "./ImageGallery";
+
+import { withNavigation } from "react-navigation";
 
 class CharacterProfiles extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({ navigation }) => ({
     title: "The Simpsons",
     headerStyle: {
       backgroundColor: "#53b4e6"
@@ -17,8 +20,19 @@ class CharacterProfiles extends React.Component {
     headerTintColor: "#f6c945",
     headerTitleStyle: {
       fontWeight: "bold"
-    }
-  };
+    },
+    headerRight: (
+      <Button
+        onPress={() =>
+          navigation.navigate("ImageGallery", {
+            item: navigation.state.params.item
+          })
+        }
+        title="Gallery"
+        color="#f6c945"
+      />
+    )
+  });
   render() {
     const { item } = this.props.navigation.state.params;
     return (
@@ -32,16 +46,24 @@ class CharacterProfiles extends React.Component {
         >
           <Image
             source={{ uri: item.url }}
-            style={{ width: "100%", height: "100%", marginTop: -100, marginBottom: 10, alignItems: "center" }}
+            style={{
+              width: "100%",
+              height: "90%",
+              marginTop: -100,
+              marginBottom: 10,
+              alignItems: "center"
+            }}
             resizeMode="cover"
           />
           <Text style={[styles.charactertext]}>Name: {item.name}</Text>
-          <Text style={[styles.charactertext2]}>Occupation: {item.occupation}</Text>
+          <Text style={[styles.charactertext2]}>
+            Occupation: {item.occupation}
+          </Text>
           <Button
             title="Character Directory"
             onPress={() => this.props.navigation.navigate("CharacterDirectory")}
           />
-          <Button 
+          <Button
             title="Homepage"
             onPress={() => this.props.navigation.navigate("Home")}
           />
@@ -61,7 +83,7 @@ const styles = StyleSheet.create({
     color: "black",
     alignItems: "center",
     justifyContent: "center",
-    textAlign: "center",
+    textAlign: "center"
   },
   charactertext2: {
     color: "black",
@@ -71,4 +93,3 @@ const styles = StyleSheet.create({
 });
 
 export default CharacterProfiles;
-
